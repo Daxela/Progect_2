@@ -9,8 +9,7 @@ import org.openqa.selenium.By;
 import pages.BasicPage;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
 
 public class Login {
@@ -40,6 +39,7 @@ public class Login {
     @And("a password will be entered")
     public void inputPassword() {
         basicPage.inputPassword(UserConfig.USER_PASSWORD);
+        sleep(1000);
     }
 
     @Then("the user will see the yandex home page")
